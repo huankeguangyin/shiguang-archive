@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">时光档案手机 App 视觉概念图</title>
+  <desc id="desc">展示照片抽屉、时间刻度和下拉快速记录面板组合的三屏手机界面。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f0ea"/>
+      <stop offset="1" stop-color="#ddd6ce"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ab6c6"/>
+      <stop offset="1" stop-color="#e9c9a9"/>
+    </linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e293c"/>
+      <stop offset="1" stop-color="#76566d"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".42"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#6c6259" flood-opacity=".22"/>
+    </filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#514941" flood-opacity=".18"/>
+    </filter>
+    <clipPath id="screen1"><rect x="90" y="92" width="380" height="780" rx="42"/></clipPath>
+    <clipPath id="screen2"><rect x="610" y="92" width="380" height="780" rx="42"/></clipPath>
+    <clipPath id="screen3"><rect x="1130" y="92" width="380" height="780" rx="42"/></clipPath>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1450" cy="80" r="210" fill="#f7cda6" opacity=".25"/>
+  <circle cx="120" cy="950" r="250" fill="#a9b9c6" opacity=".17"/>
+  <text x="90" y="62" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" letter-spacing="4" fill="#6d665e">VISUAL CONCEPT / 01</text>
+  <text x="90" y="930" font-family="Arial, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#252b2d">时光档案</text>
+  <text x="90" y="962" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" fill="#716a63">把旅行、观影和生活片段收进一个可回看的记忆空间</text>
+
+  <!-- Phone 1: timeline home -->
+  <g filter="url(#shadow)">
+    <rect x="78" y="80" width="404" height="804" rx="52" fill="#25282b"/>
+    <rect x="90" y="92" width="380" height="780" rx="42" fill="#f5f1eb"/>
+  </g>
+  <g clip-path="url(#screen1)" font-family="Arial, Microsoft YaHei, sans-serif">
+    <rect x="90" y="92" width="380" height="780" fill="#f5f1eb"/>
+    <rect x="90" y="92" width="380" height="74" fill="#f5f1eb"/>
+    <text x="116" y="132" font-size="13" fill="#8a8178">我的生活档案</text>
+    <text x="116" y="158" font-size="23" font-weight="700" fill="#252b2d">2025 年 · 春</text>
+    <circle cx="438" cy="133" r="18" fill="#252b2d"/>
+    <text x="431" y="140" font-size="17" fill="#fff">⌕</text>
+    <text x="116" y="205" font-size="11" fill="#a39a90" letter-spacing="2">TIME RULER</text>
+    <line x1="120" y1="235" x2="442" y2="235" stroke="#c5bbb0" stroke-width="1"/>
+    <g fill="#9a9188" font-size="12" text-anchor="middle">
+      <text x="135" y="224">2月</text><text x="188" y="224">3月</text><text x="242" y="224">4月</text><text x="296" y="224">5月</text><text x="350" y="224">6月</text><text x="405" y="224">7月</text>
+    </g>
+    <g stroke="#bcb1a6" stroke-width="1">
+      <line x1="135" y1="229" x2="135" y2="243"/><line x1="188" y1="229" x2="188" y2="243"/><line x1="242" y1="229" x2="242" y2="243"/><line x1="296" y1="229" x2="296" y2="243"/><line x1="350" y1="229" x2="350" y2="243"/><line x1="405" y1="229" x2="405" y2="243"/>
+    </g>
+    <circle cx="242" cy="235" r="6" fill="#df785e"/>
+    <text x="116" y="282" font-size="14" font-weight="700" fill="#333638">4 月的记忆</text>
+    <text x="116" y="304" font-size="12" fill="#8b837b">3 个片段 · 2 个地点</text>
+    <rect x="116" y="326" width="328" height="172" rx="20" fill="#fffdf9" filter="url(#smallShadow)"/>
+    <rect x="116" y="326" width="328" height="102" rx="20" fill="url(#sky)"/>
+    <path d="M116 410 C180 375 204 390 250 366 C296 342 335 390 444 350 L444 428 L116 428 Z" fill="#628477" opacity=".68"/>
+    <path d="M116 422 C192 405 250 424 320 395 C372 375 412 404 444 391 L444 428 L116 428 Z" fill="#e9d2ae" opacity=".75"/>
+    <rect x="134" y="342" width="62" height="22" rx="11" fill="#ffffff" opacity=".78"/>
+    <text x="148" y="357" font-size="10" fill="#645c55">旅行</text>
+    <text x="134" y="458" font-size="16" font-weight="700" fill="#292d2f">京都春日</text>
+    <text x="134" y="480" font-size="11" fill="#827970">2025.04.18 · 日本京都</text>
+    <rect x="116" y="522" width="328" height="108" rx="20" fill="#e8e2d7"/>
+    <rect x="134" y="540" width="68" height="70" rx="12" fill="url(#night)"/>
+    <circle cx="170" cy="570" r="17" fill="#efc16f" opacity=".88"/>
+    <text x="220" y="560" font-size="15" font-weight="700" fill="#343839">看完《暗黑》</text>
+    <text x="220" y="582" font-size="11" fill="#827970">电视剧 · 9/10</text>
+    <text x="220" y="604" font-size="11" fill="#827970">2025.04.25</text>
+    <rect x="116" y="654" width="328" height="82" rx="20" fill="#f0ded3"/>
+    <circle cx="148" cy="695" r="18" fill="#d27864" opacity=".8"/>
+    <text x="142" y="700" font-size="14" fill="#fff">✦</text>
+    <text x="180" y="689" font-size="14" font-weight="700" fill="#343839">周末散步</text>
+    <text x="180" y="711" font-size="11" fill="#827970">生活 · 上海 · 2025.04.27</text>
+    <circle cx="414" cy="806" r="31" fill="#252b2d" filter="url(#smallShadow)"/>
+    <text x="403" y="817" font-size="28" fill="#fff">+</text>
+  </g>
+  <rect x="232" y="99" width="96" height="20" rx="10" fill="#25282b"/>
+  <text x="116" y="910" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#756e66" text-anchor="middle">时间刻度浏览</text>
+
+  <!-- Phone 2: memory detail / photo drawer -->
+  <g filter="url(#shadow)">
+    <rect x="598" y="80" width="404" height="804" rx="52" fill="#25282b"/>
+    <rect x="610" y="92" width="380" height="780" rx="42" fill="#f6f2ed"/>
+  </g>
+  <g clip-path="url(#screen2)" font-family="Arial, Microsoft YaHei, sans-serif">
+    <rect x="610" y="92" width="380" height="780" fill="#f6f2ed"/>
+    <rect x="610" y="92" width="380" height="410" fill="#d6e1df"/>
+    <rect x="610" y="92" width="380" height="410" fill="url(#sky)" opacity=".62"/>
+    <path d="M610 387 C680 340 732 368 784 328 C840 286 898 347 990 304 L990 502 L610 502 Z" fill="#5e7c72" opacity=".82"/>
+    <path d="M610 419 C700 380 762 422 824 374 C874 336 935 390 990 360 L990 502 L610 502 Z" fill="#e6c8a2" opacity=".72"/>
+    <rect x="610" y="92" width="380" height="70" fill="#1e2b2b" opacity=".22"/>
+    <text x="636" y="133" font-size="20" fill="#fff">‹</text>
+    <text x="950" y="133" font-size="20" fill="#fff">⋯</text>
+    <rect x="636" y="340" width="90" height="25" rx="12" fill="#ffffff" opacity=".78"/>
+    <text x="657" y="357" font-size="11" fill="#5e675f">旅行 · 4月</text>
+    <rect x="610" y="448" width="380" height="424" rx="32" fill="#fffdf9"/>
+    <text x="642" y="500" font-size="27" font-weight="700" fill="#242a2c">京都春日</text>
+    <text x="642" y="527" font-size="12" fill="#8d837a">2025 年 4 月 18 日 · 日本京都</text>
+    <text x="642" y="574" font-size="15" fill="#424747">鸭川边的风很轻，走到黄昏时，</text>
+    <text x="642" y="598" font-size="15" fill="#424747">刚好看见远处的山被夕阳染成金色。</text>
+    <rect x="642" y="632" width="318" height="74" rx="16" fill="#f0ece5"/>
+    <text x="660" y="657" font-size="11" fill="#a0968b">AI 整理</text>
+    <text x="660" y="680" font-size="13" font-weight="700" fill="#424747">“在京都鸭川度过的春日黄昏”</text>
+    <rect x="642" y="730" width="88" height="26" rx="13" fill="#e8d8c7"/>
+    <text x="664" y="747" font-size="11" fill="#745f52">#春日</text>
+    <rect x="740" y="730" width="88" height="26" rx="13" fill="#dce5de"/>
+    <text x="762" y="747" font-size="11" fill="#5f7668">#散步</text>
+    <rect x="842" y="730" width="88" height="26" rx="13" fill="#e5e0ef"/>
+    <text x="864" y="747" font-size="11" fill="#6d6582">#旅行</text>
+    <circle cx="938" cy="814" r="28" fill="#252b2d"/>
+    <text x="928" y="823" font-size="17" fill="#fff">✦</text>
+  </g>
+  <rect x="752" y="99" width="96" height="20" rx="10" fill="#25282b"/>
+  <text x="800" y="910" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#756e66" text-anchor="middle">照片抽屉贴合</text>
+
+  <!-- Phone 3: pull-down quick capture -->
+  <g filter="url(#shadow)">
+    <rect x="1118" y="80" width="404" height="804" rx="52" fill="#25282b"/>
+    <rect x="1130" y="92" width="380" height="780" rx="42" fill="#eef0ed"/>
+  </g>
+  <g clip-path="url(#screen3)" font-family="Arial, Microsoft YaHei, sans-serif">
+    <rect x="1130" y="92" width="380" height="780" fill="#e8ece9"/>
+    <text x="1156" y="144" font-size="13" fill="#768178">下拉快速记录</text>
+    <text x="1156" y="179" font-size="25" font-weight="700" fill="#252d2c">记下此刻</text>
+    <rect x="1156" y="206" width="328" height="144" rx="24" fill="#ffffff" opacity=".72"/>
+    <text x="1178" y="242" font-size="13" fill="#a19e96">写下刚刚发生的事……</text>
+    <line x1="1178" y1="275" x2="1460" y2="275" stroke="#d7ddd9"/>
+    <line x1="1178" y1="306" x2="1412" y2="306" stroke="#d7ddd9"/>
+    <rect x="1156" y="374" width="156" height="118" rx="22" fill="#f3ded2"/>
+    <circle cx="1200" cy="420" r="22" fill="#d37e68"/>
+    <text x="1193" y="428" font-size="19" fill="#fff">✎</text>
+    <text x="1178" y="465" font-size="14" font-weight="700" fill="#4e4742">文字记录</text>
+    <rect x="1328" y="374" width="156" height="118" rx="22" fill="#dce7df"/>
+    <circle cx="1372" cy="420" r="22" fill="#789786"/>
+    <text x="1365" y="428" font-size="18" fill="#fff">●</text>
+    <text x="1350" y="465" font-size="14" font-weight="700" fill="#4e4742">语音记录</text>
+    <rect x="1156" y="514" width="156" height="118" rx="22" fill="#dfe4ef"/>
+    <circle cx="1200" cy="560" r="22" fill="#7788a7"/>
+    <text x="1192" y="567" font-size="18" fill="#fff">▣</text>
+    <text x="1178" y="605" font-size="14" font-weight="700" fill="#4e4742">添加照片</text>
+    <rect x="1328" y="514" width="156" height="118" rx="22" fill="#ece6d5"/>
+    <circle cx="1372" cy="560" r="22" fill="#c0a064"/>
+    <text x="1364" y="568" font-size="18" fill="#fff">⌖</text>
+    <text x="1350" y="605" font-size="14" font-weight="700" fill="#4e4742">添加地点</text>
+    <rect x="1156" y="664" width="328" height="78" rx="22" fill="#252d2c"/>
+    <text x="1181" y="697" font-size="11" fill="#b9c9bd">AI 助手</text>
+    <text x="1181" y="721" font-size="14" fill="#fff">整理成一条完整记忆</text>
+    <text x="1446" y="713" font-size="21" fill="#e6c17f">✦</text>
+  </g>
+  <rect x="1272" y="99" width="96" height="20" rx="10" fill="#25282b"/>
+  <text x="1320" y="910" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#756e66" text-anchor="middle">下拉快速记录</text>
+
+  <text x="1510" y="968" font-family="Arial, Microsoft YaHei, sans-serif" font-size="12" fill="#8a8178" text-anchor="end">concept mockup · 2025</text>
+</svg>

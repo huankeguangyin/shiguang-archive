@@ -1,0 +1,18 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "「时光档案」是一个记录旅行、观影、阅读与生活片段的移动端原型。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  }
+}

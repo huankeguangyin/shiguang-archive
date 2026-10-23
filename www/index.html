@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f0e9">
+  <title>时光档案 · 个人生活记忆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell" id="appShell">
+    <section class="phone-stage" aria-label="时光档案 App">
+      <header class="app-header" id="homeHeader">
+        <div>
+          <p class="eyebrow">我的生活档案</p>
+          <h1><span id="currentYearLabel">2026</span> <span>·</span> <span id="currentSeasonLabel">秋</span></h1>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="quickOpen" aria-label="快速记录" title="快速记录"><i data-lucide="pen-line"></i></button>
+          <button class="icon-btn" id="searchOpen" aria-label="打开搜索" title="搜索"><i data-lucide="search"></i></button>
+        </div>
+      </header>
+
+      <div class="screen-scroll" id="screenScroll">
+        <section class="home-screen screen active" id="homeScreen" aria-label="时间轴首页">
+          <div class="ruler-block">
+            <div class="section-label-row">
+              <span class="section-label">时间刻度</span>
+              <span class="hint-text">滑动浏览记忆</span>
+            </div>
+            <div class="month-ruler" id="monthRuler" role="tablist" aria-label="按月份浏览">
+              <div class="ruler-line"></div>
+            </div>
+          </div>
+
+          <div class="month-summary">
+            <div>
+              <p class="eyebrow" id="monthSummaryLabel">2026 年 10 月</p>
+              <h2 id="monthTitle">4 月的记忆</h2>
+            </div>
+            <div class="year-control">
+              <button class="year-switch" id="yearSwitch" type="button" aria-label="选择年份" aria-expanded="false" aria-controls="yearPicker"><span id="yearLabel">2026</span><i data-lucide="chevron-down"></i></button>
+              <div class="year-picker hidden" id="yearPicker" role="dialog" aria-label="选择年份">
+                <div class="year-picker-head"><span>选择年份</span><button class="icon-btn year-picker-close" id="yearPickerClose" type="button" aria-label="关闭年份选择"><i data-lucide="x"></i></button></div>
+                <div class="year-picker-input-row">
+                  <button class="year-step" id="yearPrev" type="button" aria-label="上一年"><i data-lucide="chevron-left"></i></button>
+                  <input id="yearInput" type="number" min="1900" max="2200" step="1" inputmode="numeric" aria-label="年份">
+                  <button class="year-step" id="yearNext" type="button" aria-label="下一年"><i data-lucide="chevron-right"></i></button>
+                </div>
+                <input id="yearRange" type="range" min="1900" max="2200" step="1" aria-label="拖动选择年份">
+                <div class="year-range-labels"><span>1900</span><span>2200</span></div>
+                <div class="year-quick-actions" aria-label="快速选择年份">
+                  <button class="year-quick" id="yearCurrent" type="button"><i data-lucide="calendar-days"></i><span>今年</span></button>
+                  <button class="year-quick" id="yearLatestMemory" type="button"><i data-lucide="history"></i><span>最近有记忆</span></button>
+                </div>
+              </div>
+            </div>
+            <span class="memory-count" id="memoryCount">3 个片段</span>
+          </div>
+
+          <div class="category-strip" id="categoryStrip" role="tablist" aria-label="记忆分类"></div>
+          <div class="stack-toolbar hidden" id="stackToolbar" aria-hidden="true">
+            <span class="stack-toolbar-count" id="stackToolbarCount"></span>
+            <button class="icon-btn stack-collapse" id="stackCollapse" type="button" aria-label="收起叠卡" title="收起叠卡" aria-controls="memoryFeed"><i data-lucide="layers-2"></i></button>
+          </div>
+          <div class="memory-feed timeline-feed" id="memoryFeed"></div>
+          <button class="stack-hint hidden" id="stackHint" type="button" aria-hidden="true" aria-expanded="false" aria-controls="memoryFeed" aria-label="展开记忆叠卡" title="展开叠卡"><i data-lucide="layers-2"></i><i data-lucide="chevron-down"></i></button>
+          <div class="empty-state hidden" id="emptyState">
+            <div class="empty-mark">✦</div>
+            <h3>这一页还留着空白</h3>
+            <p>把刚刚发生的事收进来，未来会感谢现在的你。</p>
+            <button class="text-btn" id="emptyCreate">写下第一条</button>
+          </div>
+        </section>
+
+        <section class="search-screen screen" id="searchScreen" aria-label="搜索记忆">
+          <div class="subpage-head">
+            <button class="icon-btn" data-back-home aria-label="返回首页" title="返回">
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <div>
+              <p class="eyebrow">回看生活</p>
+              <h2>搜索记忆</h2>
+            </div>
+          </div>
+          <label class="search-field">
+            <i data-lucide="search"></i>
+            <input id="searchInput" type="search" placeholder="搜索标题、地点或分类" autocomplete="off">
+            <button class="clear-btn hidden" id="searchClear" aria-label="清除搜索"><i data-lucide="x"></i></button>
+          </label>
+          <div class="category-strip search-categories" id="searchCategories" role="tablist" aria-label="筛选分类"></div>
+          <div class="search-result-meta" id="searchResultMeta">所有记忆</div>
+          <div class="memory-feed compact" id="searchFeed"></div>
+        </section>
+
+        <section class="detail-screen screen" id="detailScreen" aria-label="记忆详情">
+          <div class="detail-hero" id="detailHero">
+            <button class="hero-icon icon-btn light" data-back-home aria-label="返回首页" title="返回"><i data-lucide="arrow-left"></i></button>
+            <button class="hero-icon right icon-btn light" id="detailMore" aria-label="更多选项" title="更多" aria-expanded="false" aria-controls="detailMenu"><i data-lucide="more-horizontal"></i></button>
+            <div class="detail-gallery" id="detailGallery" aria-label="记忆照片相册"></div>
+            <div class="hero-tags" id="detailTags"></div>
+          </div>
+          <div class="detail-menu hidden" id="detailMenu" role="menu" aria-label="记忆操作">
+            <button type="button" role="menuitem" data-detail-action="edit"><i data-lucide="pencil"></i><span>编辑</span></button>
+            <button type="button" role="menuitem" data-detail-action="archive"><i data-lucide="archive"></i><span>归档</span></button>
+            <button type="button" role="menuitem" class="danger" data-detail-action="delete"><i data-lucide="trash-2"></i><span>删除</span></button>
+          </div>
+          <div class="detail-sheet" id="detailSheet"></div>
+        </section>
+
+        <section class="archive-screen screen" id="archiveScreen" aria-label="归档管理">
+          <div class="subpage-head">
+            <button class="icon-btn" data-back-home aria-label="返回首页" title="返回"><i data-lucide="arrow-left"></i></button>
+            <div><p class="eyebrow">收好的片段</p><h2>归档管理</h2></div>
+          </div>
+          <div class="archive-intro"><i data-lucide="archive"></i><span>归档的记忆不会出现在时间轴，但仍会被保留。</span></div>
+          <div class="archive-folder-head"><div><p class="eyebrow">整理方式</p><strong>文件夹</strong></div><button class="folder-create-btn" id="folderCreate" type="button"><i data-lucide="folder-plus"></i><span>新建</span></button></div>
+          <div class="archive-folders" id="archiveFolders" role="tablist" aria-label="归档文件夹"></div>
+          <div class="memory-feed compact" id="archiveFeed"></div>
+          <div class="empty-state hidden" id="archiveEmpty"><div class="empty-mark"><i data-lucide="archive"></i></div><h3>还没有归档记忆</h3><p>在记忆详情页选择“归档”，它们会收在这里。</p></div>
+        </section>
+
+        <section class="create-screen screen" id="createScreen" aria-label="新建记忆">
+          <div class="subpage-head">
+            <button class="icon-btn" data-back-home aria-label="取消新建" title="取消"><i data-lucide="x"></i></button>
+            <div>
+              <p class="eyebrow">留住此刻</p>
+              <h2 id="createTitle">新建记忆</h2>
+            </div>
+            <button class="save-btn" id="saveMemory">保存</button>
+          </div>
+          <form class="memory-form" id="memoryForm">
+            <label class="form-label">标题<input name="title" placeholder="给这段记忆起个名字" required></label>
+            <label class="form-label">记录内容<textarea name="body" rows="5" placeholder="写下刚刚发生的事……" required></textarea></label>
+            <div class="form-grid">
+            <label class="form-label">日期<input name="date" type="date" min="1900-01-01" max="2200-12-31" required></label>
+              <label class="form-label">地点<input name="location" placeholder="在哪里？"></label>
+            </div>
+            <label class="form-label">分类
+              <select name="category">
+                <option value="旅行">旅行</option>
+                <option value="观影">观影</option>
+                <option value="游戏">游戏</option>
+                <option value="阅读">阅读</option>
+                <option value="生活" selected>生活</option>
+                <option value="收藏">收藏</option>
+              </select>
+            </label>
+            <label class="form-label">标签<input name="tags" placeholder="用逗号分隔，例如：春日,散步"></label>
+            <div class="input-card">
+              <div class="input-card-icon"><i data-lucide="image"></i></div>
+              <div><strong id="photoLabel">添加照片</strong><span id="photoHint">可一次选择最多 9 张照片</span></div>
+              <button type="button" class="small-icon-btn" id="photoPick" aria-label="添加照片"><i data-lucide="plus"></i></button>
+            </div>
+            <input class="hidden" id="photoInput" type="file" accept="image/*" multiple aria-label="选择照片">
+            <div class="photo-preview hidden" id="photoPreview">
+              <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+              <div class="photo-preview-meta"><strong id="photoPreviewTitle">已添加照片</strong><span id="photoPreviewHint">保存后会跟随这段记忆保存在本机</span></div>
+            </div>
+            <div class="input-card ai-card">
+              <div class="input-card-icon"><i data-lucide="sparkles"></i></div>
+              <div><strong>AI 整理这段记忆</strong><span>自动生成标题、摘要和标签</span></div>
+              <button type="button" class="toggle on" id="aiToggle" aria-label="切换 AI 整理"><span></span></button>
+            </div>
+          </form>
+        </section>
+
+        <section class="settings-screen screen" id="settingsScreen" aria-label="设置">
+          <div class="subpage-head">
+            <button class="icon-btn" data-back-home aria-label="返回首页" title="返回"><i data-lucide="arrow-left"></i></button>
+            <div><p class="eyebrow">偏好设置</p><h2>设置</h2></div>
+          </div>
+          <div class="settings-list">
+            <button class="setting-row" id="darkModeToggle"><span class="setting-symbol"><i data-lucide="moon"></i></span><span><strong>深色模式</strong><small>让夜晚也适合回看记忆</small></span><span class="toggle"><span></span></span></button>
+            <button class="setting-row" id="reminderSetting" aria-pressed="false"><span class="setting-symbol"><i data-lucide="bell"></i></span><span><strong>记忆提醒</strong><small id="reminderStatus">在一年后的今天提醒我</small></span><span class="toggle" id="reminderToggle"><span></span></span></button>
+            <button class="setting-row"><span class="setting-symbol"><i data-lucide="info"></i></span><span><strong>关于时光档案</strong><small>Version 0.1 · 本地原型</small></span><span class="chevron"><i data-lucide="chevron-right"></i></span></button>
+          </div>
+        </section>
+      </div>
+
+      <div class="quick-backdrop hidden" id="quickBackdrop"></div>
+      <section class="quick-panel" id="quickPanel" aria-label="快速记录面板" aria-hidden="true">
+        <div class="grabber"></div>
+        <div class="quick-head"><div><p class="eyebrow">快速记录</p><h2>记下此刻</h2></div><button class="icon-btn" id="quickClose" aria-label="关闭快速记录"><i data-lucide="x"></i></button></div>
+        <div class="quick-note-field"><span>写下刚刚发生的事……</span><i data-lucide="edit-3"></i></div>
+        <div class="quick-grid">
+          <button class="quick-tile text" data-create><span class="quick-icon"><i data-lucide="pen-line"></i></span><strong>文字记录</strong></button>
+          <button class="quick-tile voice" id="voiceRecord"><span class="quick-icon"><i data-lucide="mic"></i></span><strong>语音记录</strong></button>
+          <button class="quick-tile photo" id="photoRecord"><span class="quick-icon"><i data-lucide="image"></i></span><strong>添加照片</strong></button>
+          <button class="quick-tile place" id="placeRecord"><span class="quick-icon"><i data-lucide="map-pin"></i></span><strong>添加地点</strong></button>
+        </div>
+        <button class="ai-action" id="quickAi"><span><small>AI 助手</small><strong>整理成一条完整记忆</strong></span><i data-lucide="sparkles"></i></button>
+      </section>
+
+      <div class="folder-dialog-backdrop hidden" id="folderDialogBackdrop"></div>
+      <section class="folder-dialog hidden" id="folderDialog" role="dialog" aria-modal="true" aria-labelledby="folderDialogTitle" aria-hidden="true">
+        <div class="quick-head"><div><p class="eyebrow">归档整理</p><h2 id="folderDialogTitle">新建文件夹</h2></div><button class="icon-btn" id="folderDialogClose" type="button" aria-label="关闭新建文件夹"><i data-lucide="x"></i></button></div>
+        <form id="folderForm" class="folder-form">
+          <label class="form-label">文件夹名称<input id="folderName" name="name" maxlength="24" placeholder="例如：游戏、亲子时光" autocomplete="off" required></label>
+          <div class="folder-dialog-actions"><button class="dialog-cancel" id="folderDialogCancel" type="button">取消</button><button class="save-btn" type="submit">创建文件夹</button></div>
+        </form>
+      </section>
+
+      <div class="onboarding-backdrop hidden" id="onboardingBackdrop"></div>
+      <section class="onboarding-tour hidden" id="onboardingTour" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle" aria-describedby="onboardingText" aria-hidden="true">
+        <button class="icon-btn onboarding-close" id="onboardingClose" type="button" aria-label="关闭使用引导" title="关闭"><i data-lucide="x"></i></button>
+        <p class="eyebrow">第一次使用</p>
+        <h2 id="onboardingTitle">从中间的加号开始</h2>
+        <p class="onboarding-text" id="onboardingText">点击加号新建一条记忆，也可以在一条记忆里添加多张照片。</p>
+        <div class="onboarding-progress" id="onboardingProgress" aria-label="引导进度"></div>
+        <div class="onboarding-actions"><button class="onboarding-skip" id="onboardingSkip" type="button">跳过</button><button class="save-btn" id="onboardingNext" type="button">下一步</button></div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="nav-item active" data-nav="home"><i data-lucide="clock-3"></i><span>时间轴</span></button>
+        <button class="nav-item" data-nav="search"><i data-lucide="search"></i><span>搜索</span></button>
+        <button class="nav-add" data-create aria-label="新建记忆" title="新建记忆"><i data-lucide="plus"></i></button>
+        <button class="nav-item" data-nav="archive"><i data-lucide="archive"></i><span>归档</span></button>
+        <button class="nav-item" data-nav="settings"><i data-lucide="sliders-horizontal"></i><span>设置</span></button>
+      </nav>
+      <button class="floating-add" data-create aria-label="新建记忆" title="新建记忆"><i data-lucide="plus"></i></button>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
